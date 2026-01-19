@@ -30,7 +30,82 @@
 
    - Blocker löschen, falls sich Pläne ändern
 
+# Tech Stack
+## Frontend
 
+- Next.js (App Router)
+
+- React
+
+- Tailwind CSS
+
+## Backend
+
+- Next.js API Routes
+
+- OAuth 2.0 – Client Credentials Flow
+
+## Externe Services
+
+- Apaleo API
+
+- Operations API (Maintenance-Blocker)
+
+- Availability API (Verfügbarkeitsprüfung)
+
+## Sonstiges
+
+- TypeScript
+
+- Fetch API
+
+- Environment Variables (.env.local)
+
+## Projekt lokal ausführen
+## Voraussetzungen
+
+- Node.js (LTS empfohlen)
+
+- npm
+
+- Zugriff auf die Apaleo Test-Umgebung
+
+## 1. Projekt installieren
+- git clone <repository-url>
+- cd <project-folder>
+- npm install
+
+## 2. Environment Variablen konfigurieren
+
+- Im Projekt-Root eine Datei .env.local anlegen:
+
+      - APALEO_CLIENT_ID=*********
+      - APALEO_CLIENT_SECRET=*******
+      - APALEO_PROPERTY_ID=*******
+
+
+## 3. App starten
+- npm run dev
+
+
+## Die Anwendung ist anschließend erreichbar unter:
+
+- http://localhost:3000
+
+## Nutzung der Anwendung
+- Blocker erstellen
+
+- Unit auswählen
+
+- Zeitraum festlegen
+
+- Reason angeben
+
+- Blocker bearbeiten
+
+- Reason / Beschreibung eines bestehenden Blockers anpassen
+
+- Blocker löschen
 
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
