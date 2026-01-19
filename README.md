@@ -1,33 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Aufgabe 2 – Offene Fragen & Annahmen
 
-## Getting Started
+Während der Umsetzung der Aufgabe sind einige Punkte aufgekommen, die im ursprünglichen Task nicht vollständig definiert waren.
 
-First, run the development server:
+Offene Fragen
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Wie erkennt der Landpartner, ob ein Zeitraum bereits gebucht ist oder nicht?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welchen Zugang hat der Landpartner (direkter Apaleo-Zugang oder nur über diese Anwendung)?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Welche Rolle hat der Landpartner und welche Berechtigungen sind erlaubt?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Welche Felder einer Maintenance dürfen bearbeitet werden (z. B. Zeitraum, Typ, Grund)?
 
-## Learn More
+Dürfen Blocker jederzeit gelöscht werden oder nur vor Beginn des Zeitraums?
 
-To learn more about Next.js, take a look at the following resources:
+Getroffene Annahmen & Umsetzung
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Um ein funktionierendes MVP zu bauen, wurden folgende Annahmen getroffen und direkt in der Anwendung umgesetzt:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Urlaubs-Blocker werden als OutOfInventory Maintenance angelegt
+
+Check-in ist 15:00, Check-out 11:00
+
+Landpartner können:
+
+Blocker erstellen
+
+den Grund (Reason / Description) bearbeiten
+
+Blocker löschen, falls sich Pläne ändern
+
+Die Verfügbarkeit wird über die Apaleo Availability API geprüft:
+
+204 No Content → nicht buchbar
+
+200 OK → noch verfügbar
 
 ## Deploy on Vercel
 
