@@ -1,9 +1,5 @@
 ## Aufgabe 2 – Offene Fragen & Annahmen
 
-- Während der Umsetzung der Aufgabe sind einige Punkte aufgekommen, die im ursprünglichen Task nicht vollständig definiert waren.
-
-- Offene Fragen
-
 - Wie erkennt der Landpartner, ob ein Zeitraum bereits gebucht ist oder nicht?
 
 - Welchen Zugang hat der Landpartner (direkter Apaleo-Zugang oder nur über diese Anwendung)?
@@ -64,7 +60,7 @@
 ## Projekt lokal ausführen
 ## Voraussetzungen
 
-- Node.js (LTS empfohlen)
+- Node.js
 
 - npm
 
