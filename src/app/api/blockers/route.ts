@@ -3,9 +3,9 @@ import { apaleoFetch } from "@/lib/apaleoClient";
 
 export async function GET(request: Request) {
   try {
-    const id = process.env.APALEO_PROPERTY_ID ?? "DEVTEST";
+    const propertyId = process.env.APALEO_PROPERTY_ID ?? "DEVTEST";
 
-    const qs = new URLSearchParams({ id });
+    const qs = new URLSearchParams({ propertyId });
     const path = `/operations/v1/maintenances?${qs.toString()}`;
     console.log("Calling Apaleo:", path);
 
@@ -64,8 +64,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const from = `${startDate}T15:00:00Z`;
-    const to = `${endDate}T11:00:00Z`;
+    const from = `${startDate}T15:00:00+01:00`;
+    const to = `${endDate}T11:00:00+01:00`;
 
     const payload = {
       unitId,
