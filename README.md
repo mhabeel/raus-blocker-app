@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Aufgabe 2 – Offene Fragen & Annahmen
 
-## Getting Started
+- Wie erkennt der Landpartner, ob ein Zeitraum bereits gebucht ist oder nicht?
 
-First, run the development server:
+- Welchen Zugang hat der Landpartner (direkter Apaleo-Zugang oder nur über diese Anwendung)?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Welche Rolle hat der Landpartner und welche Berechtigungen sind erlaubt?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Welche Felder einer Maintenance dürfen bearbeitet werden (z. B. Zeitraum, Typ, Grund)?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Dürfen Blocker jederzeit gelöscht werden oder nur vor Beginn des Zeitraums?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Getroffene Annahmen & Umsetzung
 
-## Learn More
+- Um ein funktionierendes MVP zu bauen, wurden folgende Annahmen getroffen und direkt in der Anwendung umgesetzt:
 
-To learn more about Next.js, take a look at the following resources:
+- Urlaubs-Blocker werden als OutOfInventory Maintenance angelegt
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Check-in ist 15:00, Check-out 11:00
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Landpartner können:
 
-## Deploy on Vercel
+   - Blocker erstellen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - den Grund (Reason / Description) bearbeiten
+
+   - Blocker löschen, falls sich Pläne ändern
+
+# Tech Stack
+## Frontend
+
+- Next.js (App Router)
+
+- React
+
+- Tailwind CSS
+
+## Backend
+
+- Next.js API Routes
+
+- OAuth 2.0 – Client Credentials Flow
+
+## Externe Services
+
+- Apaleo API
+
+- Operations API (Maintenance-Blocker)
+
+- Availability API (Verfügbarkeitsprüfung)
+
+## Sonstiges
+
+- TypeScript
+
+- Fetch API
+
+- Environment Variables (.env.local)
+
+## Projekt lokal ausführen
+## Voraussetzungen
+
+- Node.js
+
+- npm
+
+- Zugriff auf die Apaleo Test-Umgebung
+
+## 1. Projekt installieren
+- git clone <repository-url>
+- cd <project-folder>
+- npm install
+
+## 2. Environment Variablen konfigurieren
+
+- Im Projekt-Root eine Datei .env.local anlegen:
+
+      - APALEO_CLIENT_ID=*********
+      - APALEO_CLIENT_SECRET=*******
+      - APALEO_PROPERTY_ID=*******
+
+
+## 3. App starten
+- npm run dev
+
+
+## Die Anwendung ist anschließend erreichbar unter:
+
+- http://localhost:3000
+
+## Nutzung der Anwendung
+- Blocker erstellen
+
+- Unit auswählen
+
+- Zeitraum festlegen
+
+- Reason angeben
+
+- Blocker bearbeiten
+
+- Reason / Beschreibung eines bestehenden Blockers anpassen
+
+- Blocker löschen
+
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
